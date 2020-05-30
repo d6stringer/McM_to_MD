@@ -18,7 +18,7 @@ Workflow:<br />
     7. Paste the copied data to your new trello card and save the card.<br />
     8. Wait with anticipation for your parts to arrive.<br />
     9. Rinse and repeat.<br /><br />
-
+Executable can be found in the dist folder.<br /><br />
 Executable created with pyinstaller:<br />
     from command line:<br />
     pyinstaller --onefile main.py<br />
