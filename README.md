@@ -1,9 +1,9 @@
-# bm_repo
+# McM_to_MD
 
 Created by: Daniel Woodson<br />
 In May, 2020<br /><br />
 
-Purpose: Making purchase requests for McMaster was getting tedious with the copipasta and formatting for markup
+Purpose: Making purchase requests for McMaster was getting tedious with the copipasta and formatting for markdown
     so that it was easy to use seemed like a logical next step.<br /><br />
 
 Workflow:<br />
