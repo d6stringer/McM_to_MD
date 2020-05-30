@@ -6,7 +6,7 @@ In May, 2020<br /><br />
 Purpose: Making purchase requests for McMaster was getting tedious with the copipasta and formatting for markup
     so that it was easy to use seemed like a logical next step.<br /><br />
 
-Workflow:
+Workflow:<br />
     1. Make your McMaster cart like you normally would.<br />
     2. Email the McM cart to an Outlook account you have access to.<br />
     3. Save/Drag the message (*.msg format) to a location on your machine where you can find it.<br />
