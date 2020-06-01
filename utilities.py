@@ -10,7 +10,7 @@ def pick_message():
         root = Tk()
         root.withdraw()
         root.call('wm', 'attributes', '.', '-topmost', True)
-        filename = filedialog.askopenfilename()
+        filename = filedialog.askopenfilename(filetypes = [('Outlook Messages', '*.msg')])
         print(filename)
         with open(filename) as msg_file:
             msg = Message(msg_file)
@@ -19,7 +19,7 @@ def pick_message():
         pass
 
 
-def build_message(links, item_numbers, part_numbers, qtys, descriptions, costs):
+def build_message(links, item_numbers, part_numbers, qtys, descriptions, costs, details):
     prnt_string = ''
     for i in descriptions:
         max_len_desc = 0
@@ -29,7 +29,7 @@ def build_message(links, item_numbers, part_numbers, qtys, descriptions, costs):
     for i in range(len(item_numbers)):
         part_numbers[i] = part_numbers[i].rjust(8, ' ')
         descriptions[i] = descriptions[i].ljust(max_len_desc, ' ')
-        prnt_string = prnt_string + str(item_numbers[i]) + ') [' + part_numbers[i] +']' + '(' + links[i] + ') ' + 'QTY: ' + qtys[i] + descriptions[i] + costs[i] + 'Each\n\n'
+        prnt_string = prnt_string + str(item_numbers[i]) + ') [' + part_numbers[i] +']' + '(' + links[i] + ') ' + 'QTY: ' + qtys[i] + descriptions[i] + costs[i] + 'Each\n' + details[i] + '\n\n'
     return prnt_string
 
 def find_links(contents):
@@ -102,4 +102,21 @@ def get_description(contents):
         desc = str(re.findall('\\t(.*)<', i ))
         desc = desc[2:-2]
         descriptions.append(desc)
+
     return descriptions
+
+def get_details(contents, part_numbers):
+    # get details of the part from email
+    split_contents = contents.splitlines()
+    detail_indicies = []
+    for line in split_contents:
+        for i in part_numbers:
+            if i in line:
+                detail_indicies.append(split_contents.index(line) - 1)
+
+    detail_indicies = detail_indicies[1::2]
+    details = []
+    for i in range(len(detail_indicies)):
+        details.append(split_contents[detail_indicies[i]])
+    print(details)
+    return details

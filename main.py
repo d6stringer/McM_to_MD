@@ -20,5 +20,6 @@ if __name__ == '__main__':
     qtys = utilities.get_quantities(contents, part_numbers)
     descriptions = utilities.get_description(contents)
     costs = utilities.get_cost(contents, part_numbers)
-    pyperclip.copy(utilities.build_message(links, item_numbers, part_numbers, qtys, descriptions, costs))
+    details = utilities.get_details(contents, part_numbers)
+    pyperclip.copy(utilities.build_message(links, item_numbers, part_numbers, qtys, descriptions, costs, details))
 
