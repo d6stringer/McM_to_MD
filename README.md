@@ -3,6 +3,8 @@
 Created by: Daniel Woodson<br />
 In May, 2020<br /><br />
 
+UPDATE: This project no longer works the way it was designed. MS changed the way links work in emails with "Safe Links" so it will need to be reworked with scraping instead. However, the issue has largely been resolved by way of me just ordering directly.
+
 Purpose: Making purchase requests for McMaster was getting tedious with the copipasta and formatting for markdown
     so that it was easy to use seemed like a logical next step.<br /><br />
 
